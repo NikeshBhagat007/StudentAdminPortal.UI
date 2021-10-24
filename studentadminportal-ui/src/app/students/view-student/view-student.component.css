@@ -1,0 +1,16 @@
+.top-row {
+  padding: 1em 70%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.row div {
+  margin-left: 20px;
+}
+
+.col-xs-12 {
+  width: 100%;
+}

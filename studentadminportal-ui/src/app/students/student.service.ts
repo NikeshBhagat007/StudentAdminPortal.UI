@@ -9,10 +9,14 @@ import { Student } from '../Models/api-models/student.model';
 })
 export class StudentService {
 
-  private baseApiUrl = 'https://localhost:44335/Students';
+  private baseApiUrl = 'https://localhost:44335';
   constructor(private httpClient: HttpClient) { }
 
-  getStudents(): Observable<Student[]>{
-    return this.httpClient.get<Student[]>(this.baseApiUrl);
+  getAllStudents(): Observable<Student[]>{
+    return this.httpClient.get<Student[]>(this.baseApiUrl + '/Students');
+  }
+
+  getIdWiseStudent(studentId: string): Observable<Student> {
+    return this.httpClient.get<Student>(this.baseApiUrl + '/Students/' + studentId)
   }
 }
